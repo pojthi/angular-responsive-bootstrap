@@ -1,0 +1,211 @@
+<html>
+<head>
+<!-- Bootstrap 5 CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+<!-- Slick Slider CSS -->
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.css'>
+<!-- jQuery JS -->
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
+<!-- Slick Carousel JS -->
+<script src='https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js'></script>
+<!-- Bootstrap 5 JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+<script>
+
+$.js = function (el) {
+    return $('[data-js=' + el + ']')
+};
+
+function carousel() {
+  $.js('timeline-carousel').slick({
+    infinite: false,
+    arrows: true,
+     arrows: true,
+    prevArrow: '<div class="slick-prev"> <div class="btn mr-3 btn-warning d-flex justify-content-center align-items-center"> <div>Previous</div><svg class="ml-1" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 24 24" style="enable-background:new 0 0 24 24;" xml:space="preserve"> <path d="M10.1,19.1l1.5-1.5L7,13h14.1v-2H7l4.6-4.6l-1.5-1.5L3,12L10.1,19.1z"/> </svg></div></div>',
+    nextArrow: '<div class="slick-next"> <div class="btn btn-warning d-flex justify-content-center align-items-center"> <svg class="mr-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"> <path d="M 14 4.9296875 L 12.5 6.4296875 L 17.070312 11 L 3 11 L 3 13 L 17.070312 13 L 12.5 17.570312 L 14 19.070312 L 21.070312 12 L 14 4.9296875 z"/> </svg> <div>Next</div></div></div>',
+    dots: true,
+    autoplay: false,
+    speed: 1100,
+    slidesToShow: 3,
+    slidesToScroll: 3,
+    responsive: [
+      {
+        breakpoint: 800,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1
+        }
+      }]
+  });
+}
+</script>
+<script>
+  $(document).ready(function() {
+    $("input[name$='group1']").click(function() {
+        var test = $(this).val();
+
+        $("div.desc").hide();
+        $("#input" + test).show();
+    });
+});
+  </script>
+</head>
+<body>
+  <div class="background">
+    <div class="gradient">
+      <div class="container">
+        
+        <h1 align="center">Submit Tax Filing</h1>
+
+  <div class="container-fluid py-5">
+
+    <div class="row">
+      <div class="col-lg-12">
+  
+        <div class="horizontal-timeline">
+  
+          <ul class="list-inline items">
+            <li class="list-inline-item items-list">
+              <div class="px-4">
+                <div class="event-date badge bg-info"></div>
+                
+              </div>
+            </li>
+            <li class="list-inline-item items-list">
+              <div class="px-4">
+                <div class="event-date badge bg-success">1</div>
+                Input Tax
+              </div>
+            </li>
+            <li class="list-inline-item items-list">
+              <div class="px-4">
+                <div class="event-date badge bg-danger">2</div>
+                Preview &amp; Confirm
+              </div>
+            </li>
+            <li class="list-inline-item items-list">
+              <div class="px-4">
+                <div class="event-date badge bg-warning"></div>
+                
+              </div>
+            </li>
+          </ul>
+  
+        </div>
+  
+      </div>
+    </div>
+  
+  </div>
+  
+        
+      
+        <div class="actions">
+          <h2 align="left">1. Tax Filing Details</h2>
+          <hr/>
+          <h6 align="left">type of filing *</h6><br/>
+          <span align="left">
+            
+            <label><input type="radio" value="1" id="ordinary" name="group1" onchange="changeinput1()"/>&nbsp;Ordinary Filing</label>&nbsp;
+            <label><input type="radio" value="2" id="additional" name="group1" onchange="changeinput2()"/>&nbsp;Additional Filing</label>
+          
+          </span>
+          <br/><br/>
+          <div id="input1" class="desc">
+          <h6 align="left">VAT Month *</h6><br/>
+          <span align="left">
+            <select id="month">
+              <option value="January">Volvo</option>
+              <option value="February">Saab</option>
+              <option value="March">VW</option>
+              <option value="April">Audi</option>
+              <option value="May">May</option>
+              <option value="June" selected>June</option>
+              <option value="July">July</option>
+              <option value="August">August</option>
+              <option value="September">September</option>
+              <option value="October">October</option>
+              <option value="November">November</option>
+              <option value="December">December</option>
+            </select>
+            &nbsp;
+            <select id="year">
+              <option value="2000">2000</option>
+              <option value="2001">2001</option>
+              <option value="2022">2022</option>
+              <option value="2023" selected>2023</option>
+            </select>
+          </span>
+          <br/>
+          <br/>
+          <h2 align="left">2. Tax Computation</h2><h6 align="right">View Exchange Rate</h6>
+          <hr/>
+          <h6 align="left">Provide total value taxible electronic service *</h6><br/>
+          <h6 align="left">1. Total value taxible electronic service exclusive of VAT</h6><input type="text" value="THB" style="text-align:right;" /><br/>
+          <h6 align="left">2. Total VAT to be remitted (7% of 1.)</h6><input type="text" value="THB" style="text-align:right;"/><br/>
+          </div>
+          <div id="input2" class="desc">
+            <h6 align="left">Tax Month *</h6><br/>
+            <span align="left">
+              <select id="month">
+                <option value="January">Volvo</option>
+                <option value="February">Saab</option>
+                <option value="March">VW</option>
+                <option value="April">Audi</option>
+                <option value="May">May</option>
+                <option value="June" selected>June</option>
+                <option value="July">July</option>
+                <option value="August">August</option>
+                <option value="September">September</option>
+                <option value="October">October</option>
+                <option value="November">November</option>
+                <option value="December">December</option>
+              </select>
+              &nbsp;
+              <select id="year">
+                <option value="2000">2000</option>
+                <option value="2001">2001</option>
+                <option value="2022">2022</option>
+                <option value="2023" selected>2023</option>
+              </select>
+              <br/>
+              <h6>Type *</h6><br/>
+              <select id="Type">
+                <option value="On-Time" selected>On-Time</option>
+                <option value="Late">Late</option>
+              </select>
+            </span>
+            <br/>
+            <br/>
+            <h2 align="left">2. Tax Computation</h2><h6 align="right">View Exchange Rate</h6>
+            <hr/>
+            <h6 align="left">Provide total value taxible electronic service *</h6><br/>
+            <h6 align="left">1. Total value taxible electronic service exclusive of VAT</h6><input type="text" value="THB" style="text-align:right;" /><br/>
+            <h6 align="left">2. Total VAT to be remitted (7% of 1.)</h6><input type="text" value="THB" style="text-align:right;"/><br/>
+            <br/>
+            <br/>
+            
+            <h6 align="left">Incase of late filing and payment, or additional filing</h6><br/>
+            <h6 align="left">3. Surcharge</h6><input type="text" value="0.00 THB" style="text-align:right;" /><br/>
+            <h6 align="left">4. Penalty</h6><input type="text" value="0.00 THB" style="text-align:right;"/><br/>
+            <h6 align="left">5. Total amount of VAT, surcharge, and penalty to be remitted (2.+3.+4.)</h6><input type="text" value="0.00 THB" style="text-align:right;"/><br/>
+            </div>
+          <br/>
+          <input class="btn btn-warning" type="button" value="Back" />&nbsp;<input class="btn btn-primary" type="button" value="Next" />
+        </div>
+      </div>
+    </div>
+  </div>
+  
+</body>
+</html>
+<script>
+  function changeInput1(){
+    alert("Ok");
+    document.getElementById("input1").style.display = block;
+  }
+  function changeInput2(){
+    alert("NOk");
+    document.getElementById("input1").style.display = none;
+  }
+</script>
