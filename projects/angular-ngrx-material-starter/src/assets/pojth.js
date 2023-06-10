@@ -21,8 +21,8 @@ function gen4(){
         document.getElementById("vatmonth").innerHTML = document.getElementById("month1").value;
         document.getElementById("amount1").innerHTML = document.getElementById("totaltaxible1").value+' THB';
         document.getElementById("amount2").innerHTML = document.getElementById("totalvat1").value+' THB';
-        document.getElementById("amount3").innerHTML = (Number(document.getElementById("amount1").value)+Number(document.getElementById("amount2").value))+' THB';
-    
+        document.getElementById("amount3").innerHTML = (Number(document.getElementById("totaltaxible1").value.replace(',',''))+Number(document.getElementById("totalvat1").value.replace(',',''))).toLocaleString()+' THB'; 
+
     
     }
     if(document.getElementById("additional").checked == true){
@@ -30,8 +30,8 @@ function gen4(){
         document.getElementById("vatmonth").innerHTML = document.getElementById("month2").value;
         document.getElementById("amount1").innerHTML = document.getElementById("totaltaxible2").value+' THB';
         document.getElementById("amount2").innerHTML = document.getElementById("totalvat2").value+' THB';
-        document.getElementById("amount3").innerHTML = (Number(document.getElementById("amount1").value)+Number(document.getElementById("amount2").value))+' THB';
-    
+        document.getElementById("amount3").innerHTML = (Number(document.getElementById("totaltaxible2").value.replace(',',''))+Number(document.getElementById("totalvat2").value.replace(',',''))).toLocaleString()+' THB'; 
+
     
     }
     
@@ -40,6 +40,7 @@ function gen4(){
 }
 
 function confirm4(){
+    document.getElementById('tl2').className = 'event-date badge bg-warning';
     var obj = new Object();
     
     if(document.getElementById("ordinary").checked == true){
@@ -47,7 +48,7 @@ function confirm4(){
         document.getElementById("vatmonth").value = document.getElementById("month1").value;
         document.getElementById("amount1").value = document.getElementById("totaltaxible1").value;
         document.getElementById("amount2").value = document.getElementById("totalvat1").value;
-        document.getElementById("amount3").value = Number(document.getElementById("amount1").value)+Number(document.getElementById("amount2").value);
+        document.getElementById("amount3").value = (Number(document.getElementById("totaltaxible1").value.replace(',',''))+Number(document.getElementById("totalvat1").value.replace(',',''))).toLocaleString(); 
 
         obj.filingType = document.getElementById("typeoffiling").value;
         obj.month  = document.getElementById("month1").value;
@@ -64,8 +65,8 @@ function confirm4(){
         document.getElementById("vatmonth").value = document.getElementById("month2").value;
         document.getElementById("amount1").value = document.getElementById("totaltaxible2").value;
         document.getElementById("amount2").value = document.getElementById("totalvat2").value;
-        document.getElementById("amount3").value = Number(document.getElementById("amount1").value)+Number(document.getElementById("amount2").value);
-    
+        document.getElementById("amount3").value = (Number(document.getElementById("totaltaxible2").value.replace(',',''))+Number(document.getElementById("totalvat2").value.replace(',',''))).toLocaleString(); 
+
         obj.filingType = document.getElementById("typeoffiling").value;
         obj.month  = document.getElementById("month2").value;
         obj.year = document.getElementById("year2").value;

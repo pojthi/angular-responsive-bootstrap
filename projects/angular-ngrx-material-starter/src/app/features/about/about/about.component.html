@@ -80,7 +80,7 @@ function carousel() {
             </li>
             <li class="list-inline-item items-list">
               <div class="px-4">
-                <div class="event-date badge bg-danger">2</div>
+                <div id="tl2" class="event-date badge bg-danger">2</div>
                 Preview &amp; Confirm
               </div>
             </li>
@@ -107,8 +107,8 @@ function carousel() {
           <h6 align="left">type of filing *</h6><br/>
           <span align="left">
             
-            <label><input type="radio" value="1" id="ordinary" name="group1" onchange="changeinput1()"/>&nbsp;Ordinary Filing</label>&nbsp;
-            <label><input type="radio" value="2" id="additional" name="group1" onchange="changeinput2()"/>&nbsp;Additional Filing</label>
+            <label><input type="radio" class="form-check-input" value="1" id="ordinary" name="group1" onchange="changeinput1()"/>&nbsp;Ordinary Filing</label>&nbsp;
+            <label><input type="radio" class="form-check-input" value="2" id="additional" name="group1" onchange="changeinput2()"/>&nbsp;Additional Filing</label>
           
           </span>
           <br/>
@@ -116,7 +116,7 @@ function carousel() {
           <div id="input1" class="desc">
           <h6 align="left">VAT Month *</h6><br/>
           <span align="left">
-            <select id="month1">
+            <select id="month1" class="form-select">
               <option value="January">Volvo</option>
               <option value="February">Saab</option>
               <option value="March">VW</option>
@@ -131,7 +131,7 @@ function carousel() {
               <option value="December">December</option>
             </select>
             &nbsp;
-            <select id="year1">
+            <select id="year1" class="form-select">
               <option value="2000">2000</option>
               <option value="2001">2001</option>
               <option value="2022">2022</option>
@@ -143,13 +143,13 @@ function carousel() {
           <h2 align="left">2. Tax Computation</h2><h6 align="right">View Exchange Rate</h6>
           <hr/>
           <h6 align="left">Provide total value taxible electronic service *</h6><br/>
-          <h6 align="left">1. Total value taxible electronic service exclusive of VAT</h6><input type="text" id="totaltaxible1" onfocus="this.value=Number(this.value.replace(',',''))" onblur="this.value=Number(this.value.replace(',','')).toLocaleString('en', 'US');document.getElementById('totalvat1').value=0.07*Number(this.value.replace(',',''));" placeholder="THB" style="text-align:right;" /><br/>
-          <h6 align="left">2. Total VAT to be remitted (7% of 1.)</h6><input type="text" id="totalvat1"   onfocus="this.value=Number(this.value.replace(',',''))" onblur="this.value=Number(this.value.replace(',','')).toLocaleString('en', 'US');" placeholder="THB" style="text-align:right;"/><br/>
+          <h6 align="left">1. Total value taxible electronic service exclusive of VAT</h6><input type="text" id="totaltaxible1" class="form-inline" onfocus="this.value=Number(this.value.replace(',',''))" onblur="this.value=Number(this.value.replace(',','')).toLocaleString('en', 'US');document.getElementById('totalvat1').value=0.07*Number(this.value.replace(',',''));" placeholder="THB" style="text-align:right;" /><br/>
+          <h6 align="left">2. Total VAT to be remitted (7% of 1.)</h6><input type="text" id="totalvat1" class="form-inline"  onfocus="this.value=Number(this.value.replace(',',''))" onblur="this.value=Number(this.value.replace(',','')).toLocaleString('en', 'US');" placeholder="THB" style="text-align:right;"/><br/>
           </div>
           <div id="input2" class="desc">
             <h6 align="left">Tax Month *</h6><br/>
             <span align="left">
-              <select id="month2">
+              <select id="month2" class="form-select">
                 <option value="January">Volvo</option>
                 <option value="February">Saab</option>
                 <option value="March">VW</option>
@@ -164,7 +164,7 @@ function carousel() {
                 <option value="December">December</option>
               </select>
               &nbsp;
-              <select id="year2">
+              <select id="year2" class="form-select">
                 <option value="2000">2000</option>
                 <option value="2001">2001</option>
                 <option value="2022">2022</option>
@@ -172,7 +172,7 @@ function carousel() {
               </select>
               <br/>
               <h6>Type *</h6><br/>
-              <select id="Type2">
+              <select id="Type2" class="form-select">
                 <option value="On-Time" selected>On-Time</option>
                 <option value="Late">Late</option>
               </select>
@@ -182,15 +182,15 @@ function carousel() {
             <h2 align="left">2. Tax Computation</h2><h6 align="right">View Exchange Rate</h6>
             <hr/>
             <h6 align="left">Provide total value taxible electronic service *</h6><br/>
-            <h6 align="left">1. Total value taxible electronic service exclusive of VAT</h6><input type="text" id="totaltaxible2" onfocus="this.value=Number(this.value.replace(',',''))" onblur="this.value=Number(this.value.replace(',','')).toLocaleString('en', 'US');document.getElementById('totalvat1').value=(0.07*Number(this.value.replace(',','')));" placeholder="THB"  style="text-align:right;" /><br/>
-            <h6 align="left">2. Total VAT to be remitted (7% of 1.)</h6><input type="text" id="totalvat2" onfocus="this.value=Number(this.value.replace(',',''))" onblur="this.value=Number(this.value.replace(',','')).toLocaleString('en', 'US');"  placeholder="THB"  style="text-align:right;"/><br/>
+            <h6 align="left">1. Total value taxible electronic service exclusive of VAT</h6><input type="text" id="totaltaxible2" class="form-inline" onfocus="this.value=Number(this.value.replace(',',''))" onblur="this.value=Number(this.value.replace(',','')).toLocaleString('en', 'US');document.getElementById('totalvat2').value=(0.07*Number(this.value.replace(',','')));" placeholder="THB"  style="text-align:right;" /><br/>
+            <h6 align="left">2. Total VAT to be remitted (7% of 1.)</h6><input type="text" id="totalvat2" class="form-inline" onfocus="this.value=Number(this.value.replace(',',''))" onblur="this.value=Number(this.value.replace(',','')).toLocaleString('en', 'US');"  placeholder="THB"  style="text-align:right;"/><br/>
             <br/>
             <br/>
             
             <h6 align="left">Incase of late filing and payment, or additional filing</h6><br/>
-            <h6 align="left">3. Surcharge</h6><input type="text" id="surcharge2" onfocus="this.value=Number(this.value.replace(',',''))" onblur="this.value=Number(this.value.replace(',','')).toLocaleString('en', 'US');"  placeholder="THB" style="text-align:right;" /><br/>
-            <h6 align="left">4. Penalty</h6><input type="text" id="penalty2" onfocus="this.value=Number(this.value.replace(',',''))" onblur="this.value=Number(this.value.replace(',','')).toLocaleString('en', 'US');"  placeholder="THB" style="text-align:right;"/><br/>
-            <h6 align="left">5. Total amount of VAT, surcharge, and penalty to be remitted (2.+3.+4.)</h6><input type="text" onfocus="this.value=Number(this.value.replace(',',''))" onblur="this.value=Number(this.value.replace(',','')).toLocaleString('en', 'US');" placeholder="THB"  style="text-align:right;"/><br/>
+            <h6 align="left">3. Surcharge</h6><input type="text" id="surcharge2" class="form-inline" onfocus="this.value=Number(this.value.replace(',',''))" onblur="this.value=Number(this.value.replace(',','')).toLocaleString('en', 'US');"  placeholder="THB" style="text-align:right;" /><br/>
+            <h6 align="left">4. Penalty</h6><input type="text" id="penalty2" class="form-inline" onfocus="this.value=Number(this.value.replace(',',''))" onblur="this.value=Number(this.value.replace(',','')).toLocaleString('en', 'US');document.getElementById('sum234').value=Number(this.value.replace(',',''))+Number(document.getElementById('surcharge2').value.replace(',',''))+Number(document.getElementById('totalvat2').value.replace(',',''));"  placeholder="THB" style="text-align:right;"/><br/>
+            <h6 align="left">5. Total amount of VAT, surcharge, and penalty to be remitted (2.+3.+4.)</h6><input id="sum234" type="text" class="form-inline" onfocus="this.value=Number(this.value.replace(',',''))" onblur="this.value=Number(this.value.replace(',','')).toLocaleString('en', 'US');" placeholder="THB"  style="text-align:right;"/><br/>
             </div>
           <br/>
           <input class="btn btn-warning col-3 col-s-3 menu" type="button" value="Back" />&nbsp;<input class="btn btn-primary col-3 col-s-3 menu" type="button" value="Next" onclick="gen4()"/>
