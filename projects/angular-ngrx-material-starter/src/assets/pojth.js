@@ -81,3 +81,13 @@ function confirm4(){
 
     alert(""+jsonString);    
 }
+
+function setFormat(num){
+    var num1 = num.toLocalString('en-US'); 
+    return num1;
+}
+
+function removeFormat(num){
+    var num1 = num.remove(',','');
+    return num1;
+}

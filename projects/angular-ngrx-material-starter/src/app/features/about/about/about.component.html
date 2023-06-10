@@ -143,8 +143,8 @@ function carousel() {
           <h2 align="left">2. Tax Computation</h2><h6 align="right">View Exchange Rate</h6>
           <hr/>
           <h6 align="left">Provide total value taxible electronic service *</h6><br/>
-          <h6 align="left">1. Total value taxible electronic service exclusive of VAT</h6><input type="text" id="totaltaxible1" style="text-align:right;" /><br/>
-          <h6 align="left">2. Total VAT to be remitted (7% of 1.)</h6><input type="text" id="totalvat1"  style="text-align:right;"/><br/>
+          <h6 align="left">1. Total value taxible electronic service exclusive of VAT</h6><input type="text" id="totaltaxible1" onfocus="this.value=Number(this.value.replace(',',''))" onblur="this.value=Number(this.value.replace(',','')).toLocaleString('en', 'US');document.getElementById('totalvat1').value=(0.07*Number(this.value.replace(',','')));" placeholder="THB" style="text-align:right;" /><br/>
+          <h6 align="left">2. Total VAT to be remitted (7% of 1.)</h6><input type="text" id="totalvat1"   onfocus="this.value=Number(this.value.replace(',',''))" onblur="this.value=Number(this.value.replace(',','')).toLocaleString('en', 'US');" placeholder="THB" style="text-align:right;"/><br/>
           </div>
           <div id="input2" class="desc">
             <h6 align="left">Tax Month *</h6><br/>
@@ -182,15 +182,15 @@ function carousel() {
             <h2 align="left">2. Tax Computation</h2><h6 align="right">View Exchange Rate</h6>
             <hr/>
             <h6 align="left">Provide total value taxible electronic service *</h6><br/>
-            <h6 align="left">1. Total value taxible electronic service exclusive of VAT</h6><input type="text" id="totaltaxible2" style="text-align:right;" /><br/>
-            <h6 align="left">2. Total VAT to be remitted (7% of 1.)</h6><input type="text" id="totalvat2" style="text-align:right;"/><br/>
+            <h6 align="left">1. Total value taxible electronic service exclusive of VAT</h6><input type="text" id="totaltaxible2" onfocus="this.value=Number(this.value.replace(',',''))" onblur="this.value=Number(this.value.replace(',','')).toLocaleString('en', 'US');document.getElementById('totalvat1').value=(0.07*Number(this.value.replace(',','')));" placeholder="THB"  style="text-align:right;" /><br/>
+            <h6 align="left">2. Total VAT to be remitted (7% of 1.)</h6><input type="text" id="totalvat2" onfocus="this.value=Number(this.value.replace(',',''))" onblur="this.value=Number(this.value.replace(',','')).toLocaleString('en', 'US');"  placeholder="THB"  style="text-align:right;"/><br/>
             <br/>
             <br/>
             
             <h6 align="left">Incase of late filing and payment, or additional filing</h6><br/>
-            <h6 align="left">3. Surcharge</h6><input type="text" id="surcharge2"  style="text-align:right;" /><br/>
-            <h6 align="left">4. Penalty</h6><input type="text" id="penalty2"  style="text-align:right;"/><br/>
-            <h6 align="left">5. Total amount of VAT, surcharge, and penalty to be remitted (2.+3.+4.)</h6><input type="text" style="text-align:right;"/><br/>
+            <h6 align="left">3. Surcharge</h6><input type="text" id="surcharge2" onfocus="this.value=Number(this.value.replace(',',''))" onblur="this.value=Number(this.value.replace(',','')).toLocaleString('en', 'US');"  placeholder="THB" style="text-align:right;" /><br/>
+            <h6 align="left">4. Penalty</h6><input type="text" id="penalty2" onfocus="this.value=Number(this.value.replace(',',''))" onblur="this.value=Number(this.value.replace(',','')).toLocaleString('en', 'US');"  placeholder="THB" style="text-align:right;"/><br/>
+            <h6 align="left">5. Total amount of VAT, surcharge, and penalty to be remitted (2.+3.+4.)</h6><input type="text" onfocus="this.value=Number(this.value.replace(',',''))" onblur="this.value=Number(this.value.replace(',','')).toLocaleString('en', 'US');" placeholder="THB"  style="text-align:right;"/><br/>
             </div>
           <br/>
           <input class="btn btn-warning col-3 col-s-3 menu" type="button" value="Back" />&nbsp;<input class="btn btn-primary col-3 col-s-3 menu" type="button" value="Next" onclick="gen4()"/>
