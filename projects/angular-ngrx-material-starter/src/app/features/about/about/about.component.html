@@ -67,13 +67,13 @@ function carousel() {
           <ul class="list-inline items">
             <li class="list-inline-item items-list">
               <div class="px-4">
-                <div class="event-date badge bg-info"></div>
+                <div class="event-date badge bg-success"></div>
                 
               </div>
             </li>
             <li class="list-inline-item items-list">
               <div class="px-4">
-                <div class="event-date badge bg-success">1</div>
+                <div id="tl1" class="event-date badge bg-info">1</div>
                 Input Tax
               </div>
             </li>
@@ -99,7 +99,7 @@ function carousel() {
   </div>
   
         
-      
+      <div id="page1">
         <div class="actions">
           <h2 align="left">1. Tax Filing Details</h2>
           <hr/>
@@ -110,11 +110,12 @@ function carousel() {
             <label><input type="radio" value="2" id="additional" name="group1" onchange="changeinput2()"/>&nbsp;Additional Filing</label>
           
           </span>
-          <br/><br/>
+          <br/>
+          <br/>
           <div id="input1" class="desc">
           <h6 align="left">VAT Month *</h6><br/>
           <span align="left">
-            <select id="month">
+            <select id="month1">
               <option value="January">Volvo</option>
               <option value="February">Saab</option>
               <option value="March">VW</option>
@@ -129,7 +130,7 @@ function carousel() {
               <option value="December">December</option>
             </select>
             &nbsp;
-            <select id="year">
+            <select id="year1">
               <option value="2000">2000</option>
               <option value="2001">2001</option>
               <option value="2022">2022</option>
@@ -141,13 +142,13 @@ function carousel() {
           <h2 align="left">2. Tax Computation</h2><h6 align="right">View Exchange Rate</h6>
           <hr/>
           <h6 align="left">Provide total value taxible electronic service *</h6><br/>
-          <h6 align="left">1. Total value taxible electronic service exclusive of VAT</h6><input type="text" value="THB" style="text-align:right;" /><br/>
-          <h6 align="left">2. Total VAT to be remitted (7% of 1.)</h6><input type="text" value="THB" style="text-align:right;"/><br/>
+          <h6 align="left">1. Total value taxible electronic service exclusive of VAT</h6><input type="text" id="totaltaxible1" style="text-align:right;" /><br/>
+          <h6 align="left">2. Total VAT to be remitted (7% of 1.)</h6><input type="text" id="totalvat1"  style="text-align:right;"/><br/>
           </div>
           <div id="input2" class="desc">
             <h6 align="left">Tax Month *</h6><br/>
             <span align="left">
-              <select id="month">
+              <select id="month2">
                 <option value="January">Volvo</option>
                 <option value="February">Saab</option>
                 <option value="March">VW</option>
@@ -162,7 +163,7 @@ function carousel() {
                 <option value="December">December</option>
               </select>
               &nbsp;
-              <select id="year">
+              <select id="year2">
                 <option value="2000">2000</option>
                 <option value="2001">2001</option>
                 <option value="2022">2022</option>
@@ -170,7 +171,7 @@ function carousel() {
               </select>
               <br/>
               <h6>Type *</h6><br/>
-              <select id="Type">
+              <select id="Type2">
                 <option value="On-Time" selected>On-Time</option>
                 <option value="Late">Late</option>
               </select>
@@ -180,32 +181,48 @@ function carousel() {
             <h2 align="left">2. Tax Computation</h2><h6 align="right">View Exchange Rate</h6>
             <hr/>
             <h6 align="left">Provide total value taxible electronic service *</h6><br/>
-            <h6 align="left">1. Total value taxible electronic service exclusive of VAT</h6><input type="text" value="THB" style="text-align:right;" /><br/>
-            <h6 align="left">2. Total VAT to be remitted (7% of 1.)</h6><input type="text" value="THB" style="text-align:right;"/><br/>
+            <h6 align="left">1. Total value taxible electronic service exclusive of VAT</h6><input type="text" id="totaltaxible2" style="text-align:right;" /><br/>
+            <h6 align="left">2. Total VAT to be remitted (7% of 1.)</h6><input type="text" id="totalvat2" style="text-align:right;"/><br/>
             <br/>
             <br/>
             
             <h6 align="left">Incase of late filing and payment, or additional filing</h6><br/>
-            <h6 align="left">3. Surcharge</h6><input type="text" value="0.00 THB" style="text-align:right;" /><br/>
-            <h6 align="left">4. Penalty</h6><input type="text" value="0.00 THB" style="text-align:right;"/><br/>
-            <h6 align="left">5. Total amount of VAT, surcharge, and penalty to be remitted (2.+3.+4.)</h6><input type="text" value="0.00 THB" style="text-align:right;"/><br/>
+            <h6 align="left">3. Surcharge</h6><input type="text" id="surcharge2"  style="text-align:right;" /><br/>
+            <h6 align="left">4. Penalty</h6><input type="text" id="penalty2"  style="text-align:right;"/><br/>
+            <h6 align="left">5. Total amount of VAT, surcharge, and penalty to be remitted (2.+3.+4.)</h6><input type="text" style="text-align:right;"/><br/>
             </div>
           <br/>
-          <input class="btn btn-warning" type="button" value="Back" />&nbsp;<input class="btn btn-primary" type="button" value="Next" />
+          <input class="btn btn-warning" type="button" value="Back" />&nbsp;<input class="btn btn-primary" type="button" value="Next" onclick="gen4()"/>
         </div>
+      </div>
+      <div id="page4">
+        <div class="actions">
+          <h2 align="left">Tax Filing Details</h2>
+          <hr/>
+          <h6 align="left">Type of filing</h6><label id="typeoffiling"></label><br/>
+          <h6 align="left">VAT Month</h6><label id="vatmonth"></label><br/>
+          <br/>
+          <br/>
+          <h2 align="left">Tax Computation</h2>
+          <hr/>
+          <h6 align="left">Total value taxible electronic service exclusive of VAT </h6><label id="amount1"></label><br/>
+          <h6 align="left">Total VAT to be remitted (7% of Total value taxible electronic service exclusive of VAT) </h6><label id="amount2"></label><br/>
+          <h6 align="left">Total Amount Payable </h6><label id="amount3"></label><br/>
+          <br/>
+          <br/>
+          <h2 align="left">Declaration</h2>
+          <hr/>
+          <h6 align="left">I hereby certify that information given above are true and correct and agree to be bound by such information</h6><br/>
+          <br/>
+          <br/>
+        </div>
+        <br/>
+        <input type="button" class="btn btn-primary" value="Confirm and Submit"  onclick="confirm4()"/>
+      </div>
+
       </div>
     </div>
   </div>
   
 </body>
 </html>
-<script>
-  function changeInput1(){
-    alert("Ok");
-    document.getElementById("input1").style.display = block;
-  }
-  function changeInput2(){
-    alert("NOk");
-    document.getElementById("input1").style.display = none;
-  }
-</script>
